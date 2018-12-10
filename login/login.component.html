@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3 jumbotron">
+    
+    <form #ref="ngForm" (ngSubmit)="onSubmit(ref.value)">
+      <h4 class="text-center text-primary"><i class="fas fa-user fa-5x"></i></h4>
+      <div class="form-group mt-4">
+
+        <label>User-name</label>
+        <input type="text" name="name" [(ngModel)]="name" class="form-control" #n="ngModel"  placeholder="User-name" required>
+      </div>
+
+      <label *ngIf="n.touched&&n.invalid" class="text-danger">*Enter User-name</label>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="pwd" [(ngModel)]="pwd" class="form-control" #p="ngModel" 
+          placeholder="password" required minlength="6" >
+          
+      </div>
+      
+      <label *ngIf="p.touched&&p.invalid&&p.errors?.minlength" class="text-danger">*reqired atleast 6 charecters</label>
+      <button type="submit"  class="btn btn-primary">Login</button>
+      <p class="mt-4"><b >if not registered you can register here <a  routerLink="/signup" >SignUp</a></b></p>
+    
+    </form>
+   
+ 
+    <router-outlet></router-outlet>
+  </div>
+</div>

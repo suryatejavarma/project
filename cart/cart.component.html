@@ -1,0 +1,19 @@
+<table class=" table table-bordered text-center mt-5">
+    <thead class="thead-dark">
+        <th>S.no</th>
+        <th>Medicine</th>
+        <th>Usage</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of obj">
+        <td>{{i.sno}}</td>
+        <td>{{i.medicine}}</td>
+        <td>{{i.usage}}</td>
+        <td>{{i.qty}}</td>
+        <td>{{i.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="text-right">TOTAL AMOUNT:</h5>
